@@ -30,7 +30,7 @@ else
 fi
 
 echo "Uploading backup to $S3_BUCKET..."
-aws $aws_args s3 cp "$local_file" "$s3_uri"
+aws $aws_args s3 cp $S3_AWS_EXTRA_OPTS "$local_file" "$s3_uri"
 rm "$local_file"
 
 echo "Backup complete."
